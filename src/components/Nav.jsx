@@ -1,7 +1,7 @@
 export default function Nav() {
     return (
         <nav aria-label="Main navigation">
-                <ul>
+                <ul className="main-nav">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Menu</a></li>
@@ -11,5 +11,5 @@ export default function Nav() {
                 </ul>
             </nav>
     )
-} 
+}
 
