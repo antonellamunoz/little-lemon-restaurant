@@ -7,15 +7,23 @@ import { MdDeliveryDining } from "react-icons/md";
 
 export default function Specials() {
     return (
-        <section className="specials-container">
+        <section
+          className="specials-container"
+          aria-labelledby="specials-heading"
+        >
             <div className="specials-header">
-                <h2>This week's specials!</h2>
+                <h2 id="specials-heading">
+                   This week's specials!
+                </h2>
                 <button>Our Menu</button>
             </div>
             <div className="specials-cards">
                 <article className="dish-card">
                     <div className="card-image">
-                        <img src={greekSalad} alt="Greek salad" />
+                        <img
+                          src={greekSalad}
+                          alt="Greek salad"
+                        />
                     </div>
                     <div className="card-header">
                         <h3>Greek Salad</h3>
@@ -27,12 +35,15 @@ export default function Specials() {
                     </p>
                     <Link to="#">
                         Order a Delivery
-                        <MdDeliveryDining />
+                        <MdDeliveryDining aria-hidden="true" />
                     </Link>
                 </article>
                 <article className="dish-card">
                     <div className="card-image">
-                        <img src={bruschetta} alt="Bruschetta" />
+                        <img
+                          src={bruschetta}
+                          alt="Bruschetta"
+                        />
                     </div>
                     <div className="card-header">
                         <h3>Bruschetta</h3>
@@ -44,12 +55,15 @@ export default function Specials() {
                     </p>
                     <Link to="#">
                         Order a Delivery
-                       <MdDeliveryDining />
+                       <MdDeliveryDining aria-hidden="true" />
                     </Link>
                 </article>
                 <article className="dish-card">
                     <div className="card-image">
-                        <img src={lemonDessert} alt="Lemon dessert" />
+                        <img
+                          src={lemonDessert}
+                          alt="Lemon dessert"
+                        />
                     </div>
                     <div className="card-header">
                         <h3>Lemon Dessert</h3>
@@ -61,7 +75,7 @@ export default function Specials() {
                     </p>
                     <Link to="#">
                         Order a Delivery
-                        <MdDeliveryDining />
+                        <MdDeliveryDining aria-hidden="true" />
                     </Link>
                 </article>
             </div>

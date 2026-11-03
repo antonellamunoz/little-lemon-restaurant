@@ -1,6 +1,6 @@
 import Homepage from "./Homepage.jsx";
-import BookingPage from "./BookingPage";
-import ConfirmedBooking from "./ConfirmedBooking.jsx"
+import BookingPage from "./BookingPage.jsx";
+import ConfirmedBooking from "./ConfirmedBooking.jsx";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useReducer } from "react";
 
@@ -19,16 +19,33 @@ export default function Main() {
 
     function submitForm(formData) {
         if (submitAPI(formData) === true) {
-            navigate("/booking-confirmed");
+            navigate("/booking-confirmed", {
+                state: formData
+            });
         }
     }
 
     return (
         <main>
            <Routes>
-               <Route path="/" element={<Homepage />} />
-               <Route path="/bookings" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />} />
-               <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
+               <Route
+                 path="/"
+                 element={<Homepage />}
+               />
+               <Route
+                 path="/bookings"
+                 element={
+                     <BookingPage
+                         availableTimes={availableTimes}
+                         dispatch={dispatch}
+                         submitForm={submitForm}
+                     />
+                 }
+               />
+               <Route
+                 path="/booking-confirmed"
+                 element={<ConfirmedBooking />}
+               />
            </Routes>
         </main>
     )

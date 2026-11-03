@@ -12,6 +12,10 @@
     height: 100px;
 }
 
+.toggle-menu {
+    display: none;
+}
+
 .main-nav {
     display: flex;
     list-style: none;
@@ -20,7 +24,7 @@
 
 .main-nav li > a {
     text-decoration: none;
-    color: black;
+    color: #333333;
     font-family: Karla, sans-serif;
     font-size: 1rem;
     font-weight: 800;
@@ -45,7 +49,7 @@
 }
 
 .hero-description > h1 {
-    font-family: Markazi Text, sans-serif;
+    font-family: Markazi Text, serif;
     font-size: 4rem;
     font-weight: 500;
     color: #F4CE14;
@@ -53,7 +57,7 @@
 }
 
 .hero-description > p:first-of-type {
-    font-family: Markazi Text, sans-serif;
+    font-family: Markazi Text, serif;
     font-size: 2.5rem;
     font-weight: 400;
     color: #EDEFEE;
@@ -69,10 +73,14 @@
     line-height: 1.2;
 }
 
-.hero-description button {
+.hero-description a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #F4CE14;
     width: 196px;
     height: 53px;
+    text-decoration: none;
     font-family: Karla, sans-serif;
     font-size: 1.125rem;
     font-weight: 800;
@@ -252,7 +260,7 @@
     font-weight: 700;
 }
 
-.review-card > p {
+.review-card > blockquote {
     font-size: 0.625rem;
     font-weight: 700;
     margin: 0.5rem 1rem 1rem 1rem;
@@ -268,7 +276,7 @@
 
 .about-content > h2,
 .about-content > p:first-of-type {
-    font-family: Markazi Text, sans-serif;
+    font-family: Markazi Text, serif;
 }
 
 .about-content > h2 {
@@ -405,13 +413,62 @@ footer {
 /* Mobile Responsiveness */
 
 @media(max-width:440px) {
-    .main-nav {
-        flex-wrap: wrap;
-        column-gap: 0.5rem;
+    .header-container {
+        position: relative;
+        padding-inline: calc((100vw - 330px) / 2);
     }
 
-    .header-container {
-        margin-left: 1rem;
+    .header-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #EDEFEE;
+        z-index: 1;
+    }
+
+    .toggle-menu {
+        display: inline-block;
+        font-size: 1.5rem;
+        border: none;
+        background-color: white;
+        transition: color 0.2s ease;
+    }
+
+    .toggle-menu:hover {
+        color: #495E57;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .main-nav.open {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-inline-start: 0;
+    }
+
+    .main-nav > li {
+        padding-block: 1rem;
+        transition: background-color 0.2s ease;
+    }
+
+    .main-nav > li > a {
+        transition: color 0.2s ease;
+    }
+
+    .main-nav > li:not(:last-of-type) {
+        border-bottom: 0.1rem dotted #D0D5D2;
+    }
+
+    .main-nav > li:hover {
+        background-color: #495E57;
+    }
+
+    .main-nav > li:hover > a {
+        color: white;
     }
 
     .hero {
@@ -465,7 +522,6 @@ footer {
     .card-image {
         max-width: 330px;
         margin: 0 auto;
-
     }
 
     .dish-card > p {

@@ -3,9 +3,14 @@ import ownersRight from "../assets/little-lemon-owners.jpg";
 
 export default function About() {
     return (
-        <section className="about-container">
+        <section
+          className="about-container"
+          arialabbeledby="about-heading"
+        >
             <div className="about-content">
-              <h2>Little Lemon</h2>
+              <h2 id="about-heading">
+                Little Lemon
+              </h2>
               <p>Chicago</p>
               <p>
                 Little Lemon was founded by Mario and Adrian, who share a passion for Mediterranean cuisine.
@@ -15,10 +20,14 @@ export default function About() {
             </div>
             <div className="about-images">
               <div className="owners-image-left">
-                <img src={ownersLeft} alt="Mario and Adrian, owners of Little Lemon" />
+                <img
+                  src={ownersLeft}
+                  alt="Mario and Adrian, two chefs smiling together in a restaurant kitchen" />
               </div>
               <div className="owners-image-right">
-                <img src={ownersRight} alt="Mario and Adrian, owners of Little Lemon" />
+                <img
+                  src={ownersRight}
+                  alt="Mario and Adrian, two chefs talking while preparing food in a kitchen" />
               </div>
             </div>
         </section>

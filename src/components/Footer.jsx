@@ -7,16 +7,31 @@ export default function Footer() {
     return (
         <footer>
             <div className="footer-container">
-            <img src={footerLogo} alt="Little Lemon logo"/>
+            <img
+              src={footerLogo}
+              alt="Little Lemon logo"
+            />
             <nav aria-label="Footer navigation">
                 <h3>Doormat Navigation</h3>
                 <ul className="footer-nav">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="#">About</Link></li>
-                    <li><Link to="#">Menu</Link></li>
-                    <li><Link to="/bookings">Reservations</Link></li>
-                    <li><Link to="#">Order Online</Link></li>
-                    <li><Link to="#">Login</Link></li>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="#">About</Link>
+                    </li>
+                    <li>
+                        <Link to="#">Menu</Link>
+                    </li>
+                    <li>
+                        <Link to="/bookings">Reservations</Link>
+                    </li>
+                    <li>
+                        <Link to="#">Order Online</Link>
+                    </li>
+                    <li>
+                        <Link to="#">Login</Link>
+                    </li>
                 </ul>
             </nav>
             <section>
