@@ -28,6 +28,17 @@
     font-family: Karla, sans-serif;
     font-size: 1rem;
     font-weight: 800;
+    transition: color 0.2s ease;
+}
+
+.main-nav li > a:focus-visible {
+    outline: 2px solid #495E57;
+    outline-offset: 1px;
+    border-radius: 3px;
+}
+
+.main-nav li > a:hover {
+    color: #495E57;
 }
 
 .hero {
@@ -73,7 +84,7 @@
     line-height: 1.2;
 }
 
-.hero-description a {
+.hero-description > a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -85,9 +96,23 @@
     font-size: 1.125rem;
     font-weight: 800;
     color: #333333;
-    border-radius: 16px;
-    border-color: #333333;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px 0.5px rgba(0, 0, 0, 0.60);
     margin-top: 1.8rem;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.hero-description > a:focus-visible {
+    outline: 2px solid #F4CE14;
+    outline-offset: 2px;
+}
+
+.hero-description > a:hover {
+    background-color: #EE9972;
+    color: #333333;
+    transform: translateY(-2px);
 }
 
 .hero-image {
@@ -133,7 +158,23 @@
     font-size: 1.125rem;
     font-weight: 800;
     color: #333333;
-    border-radius: 16px;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0.5px rgba(0, 0, 0, 0.60);
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.specials-header > button:focus-visible {
+    outline: 2px solid #495E57;
+    outline-offset: 2px;
+}
+
+.specials-header > button:hover {
+    background-color: #495E57;
+    color: #EDEFEE;
+    transform: translateY(-2px);
 }
 
 .specials-cards {
@@ -145,6 +186,9 @@
 }
 
 .dish-card {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
     background-color: #EDEFEE;
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
@@ -154,7 +198,6 @@
     margin-top: 1.5rem;
     font-size: 1rem;
     font-weight: 400;
-    min-height: 8rem;
     line-height: 1.3;
 }
 
@@ -162,17 +205,29 @@
     display: inline-flex;
     align-items: center;
     column-gap: 0.5rem;
-    margin-top: 1.5rem;
+    margin-top: auto;
     padding-bottom: 1.5rem;
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     color: #333333;
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.dish-card > a:focus-visible {
+    outline: 2px solid #495E57;
+    outline-offset: 1px;
+    border-radius: 3px;
+}
+
+.dish-card > a:hover {
+    color: #495E57;
 }
 
 .card-image {
     aspect-ratio: 4 / 3;
+    overflow: hidden;
 }
 
 .card-image > img {
@@ -320,14 +375,14 @@
 }
 
 .owners-image-right {
-   position: absolute;
-   z-index: 1;
-   bottom: 50px;
-   left: 205px;
+    position: absolute;
+    z-index: 1;
+    bottom: 50px;
+    left: 205px;
 }
 
 .owners-image-left {
-    z-index:2;
+    z-index: 2;
 }
 
 footer {
@@ -366,6 +421,16 @@ footer {
     font-style: normal;
 }
 
+.footer-nav li > a:focus-visible {
+    outline: 2px solid #FBDABB;
+    outline-offset: 1px;
+    border-radius: 3px;
+}
+
+.footer-nav li > a:hover {
+    color: #FBDABB;
+}
+
 .footer-container > nav > h3,
 .footer-container > section > h3 {
     color: #F4CE14;
@@ -391,6 +456,16 @@ footer {
     font-size: 3rem;
 }
 
+.social-links li > a:focus-visible {
+    outline: 2px solid #FBDABB;
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+.social-links li > a:hover {
+    color: #EE9972;
+}
+
 .footer-container > section:last-of-type {
     justify-self: end;
 }
@@ -412,7 +487,7 @@ footer {
 
 /* Mobile Responsiveness */
 
-@media(max-width:440px) {
+@media (max-width: 440px) {
     .header-container {
         position: relative;
         padding-inline: calc((100vw - 330px) / 2);
@@ -520,16 +595,7 @@ footer {
     }
 
     .card-image {
-        max-width: 330px;
-        margin: 0 auto;
-    }
-
-    .dish-card > p {
-        min-height: 7rem;
-    }
-
-    .dish-card > a {
-        margin-top: 0;
+        width: 100%;
     }
 
     .review-cards-container {
@@ -557,7 +623,7 @@ footer {
     }
 
     .about-content {
-       max-width: 280px;
+        max-width: 280px;
     }
 
     .about-content > h2 {

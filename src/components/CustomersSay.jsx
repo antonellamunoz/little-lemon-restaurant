@@ -1,116 +1,61 @@
+import ReviewCard from "./ReviewCard.jsx";
 import Noah from "../assets/pexels-noah.jpg";
 import Dakota from "../assets/pexels-dakota.jpg";
 import Kendall from "../assets/pexels-kendall.jpg";
 import Charles from "../assets/pexels-charles.jpg";
-import { FaStar } from "react-icons/fa6";
-import { FaRegStarHalfStroke } from "react-icons/fa6";
-import { FaRegStar } from "react-icons/fa6";
+
+const reviewers = [
+    {
+        reviewerRating: 4.5,
+        reviewerImage: Noah,
+        reviewerAlt: "Noah, Little Lemon customer",
+        reviewerName: "Noah",
+        reviewerReview: "Amazing food and a really welcoming atmosphere. I’ll definitely be back!"
+    },
+    {
+        reviewerRating: 4,
+        reviewerImage: Dakota,
+        reviewerAlt: "Dakota, Little Lemon customer",
+        reviewerName: "Dakota",
+        reviewerReview: "Everything was fresh and delicious. The Greek salad was my favourite!"
+    },
+    {
+        reviewerRating: 5,
+        reviewerImage: Kendall,
+        reviewerAlt: "Kendall, Little Lemon customer",
+        reviewerName: "Kendall",
+        reviewerReview: "Great service, lovely atmosphere, and fantastic Mediterranean food."
+    },
+    {
+        reviewerRating: 4,
+        reviewerImage: Charles,
+        reviewerAlt: "Charles, Little Lemon customer",
+        reviewerName: "Charles",
+        reviewerReview: "The food was delicious, although the service was a little slow. Still a great experience overall!"
+    }
+];
 
 export default function CustomersSay() {
     return (
         <section
-          className="testimonials-container"
-          aria-labelledby="testimonials-heading"
+            className="testimonials-container"
+            aria-labelledby="testimonials-heading"
         >
-          <h2 id="testimonials-heading">
-            Testimonials
-          </h2>
-          <div className="review-cards-container">
-            <article className="review-card">
-              <div
-                className="rating"
-                role="img"
-                aria-label="4.5 out of 5 stars"
-              >
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaRegStarHalfStroke aria-hidden="true"/>
-              </div>
-              <div className="reviewer">
-                <div className="reviewer-image">
-                  <img
-                    src={Noah}
-                    alt="Noah, Little Lemon customer"
-                  />
-                </div>
-                <h3>Noah</h3>
-              </div>
-              <blockquote>“Amazing food and a really welcoming atmosphere. I’ll definitely be back!”</blockquote>
-            </article>
-            <article className="review-card">
-              <div
-                className="rating"
-                role="img"
-                aria-label="4 out of 5 stars"
-              >
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaRegStar aria-hidden="true"/>
-              </div>
-              <div className="reviewer">
-                <div className="reviewer-image">
-                  <img
-                    src={Dakota}
-                    alt="Dakota, Little Lemon customer"
-                  />
-                </div>
-                <h3>Dakota</h3>
-              </div>
-                <blockquote>“Everything was fresh and delicious. The Greek salad was my favourite!”</blockquote>
-            </article>
-            <article className="review-card">
-              <div
-                className="rating"
-                role="img"
-                aria-label="5 out of 5 stars"
-              >
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-              </div>
-              <div className="reviewer">
-                <div className="reviewer-image">
-                  <img
-                    src={Kendall}
-                    alt="Kendall, Little Lemon customer"
-                  />
-                </div>
-                <h3>Kendall</h3>
-              </div>
-                <blockquote>“Great service, lovely atmosphere, and fantastic Mediterranean food.”</blockquote>
-            </article>
-            <article className="review-card">
-              <div
-                className="rating"
-                role="img"
-                aria-label="4 out of 5 stars"
-              >
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaStar aria-hidden="true"/>
-                <FaRegStar aria-hidden="true"/>
-              </div>
-              <div className="reviewer">
-                <div className="reviewer-image">
-                  <img
-                    src={Charles}
-                    alt="Charles, Little Lemon customer"
-                  />
-                </div>
-                <h3>Charles</h3>
-              </div>
-                <blockquote>“The food was delicious, although the service was a little slow. Still a great experience
-                  overall!”
-                </blockquote>
-            </article>
-          </div>
+            <h2 id="testimonials-heading">
+                Testimonials
+            </h2>
+            <div className="review-cards-container">
+                {reviewers.map((reviewer) => (
+                    <ReviewCard
+                        key={reviewer.reviewerName}
+                        reviewerRating={reviewer.reviewerRating}
+                        reviewerImage={reviewer.reviewerImage}
+                        reviewerAlt={reviewer.reviewerAlt}
+                        reviewerName={reviewer.reviewerName}
+                        reviewerReview={reviewer.reviewerReview}
+                    />
+                ))}
+            </div>
         </section>
-    )
+    );
 }

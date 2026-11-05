@@ -16,8 +16,9 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
         setIsFormValid(formRef.current.checkValidity());
     }, [date, time, guests]);
 
-    const timeOptions = availableTimes.map((availableTime) =>
-          (<option key={availableTime}>{availableTime}</option>))
+    const timeOptions = availableTimes.map((availableTime) => (
+        <option key={availableTime}>{availableTime}</option>
+    ));
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -45,8 +46,8 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
 
     const guestsError =
         guests >= 1 && guests <= 10
-        ? null
-        : "Number of guests must be between 1 and 10!"
+            ? null
+            : "Number of guests must be between 1 and 10!"
 
     return (
         <form
@@ -89,14 +90,23 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
 
                 <FaChevronDown aria-hidden="true"/>
             </div>
-            <label htmlFor="guests">
-                Number of guests<span aria-hidden="true">*</span>
-            </label>
-             <div className="guests-field-wrapper">
+            <div className="guests-label-wrapper">
+                <label htmlFor="guests">
+                    Number of guests<span aria-hidden="true">*</span>
+                </label>
+                <p id="guests-hint" className="field-hint">
+                    1-10 guests
+                </p>
+            </div>
+            <div className="guests-field-wrapper">
                 <input
                     type="number"
                     id="guests"
-                    aria-describedby="guests-error"
+                    aria-describedby={
+                        guestsTouched && guestsError
+                        ? "guests-hint guests-error"
+                        : "guests-hint"
+                    }
                     aria-invalid={guestsTouched && Boolean(guestsError)}
                     name="guests"
                     placeholder="Enter number of guests"

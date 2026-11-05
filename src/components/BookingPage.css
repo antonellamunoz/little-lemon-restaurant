@@ -28,8 +28,8 @@
     height: 2.5rem;
     padding-inline: 0.5rem;
     appearance: none;
-    border-radius: 0.3rem;
-    border: 1px solid black;
+    border-radius: 6px;
+    border: 1px solid #3333;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 400;
@@ -45,11 +45,11 @@
 }
 
 .field-wrapper > svg {
-   position: absolute;
-   top: 13px;
-   right: 11px;
-   font-size: 0.8rem;
-   pointer-events: none;
+    position: absolute;
+    top: 13px;
+    right: 11px;
+    font-size: 0.8rem;
+    pointer-events: none;
 }
 
 .booking-form input[type="date"]:invalid::-webkit-datetime-edit {
@@ -72,8 +72,23 @@
     outline-offset: 2px;
 }
 
-.booking-form input[aria-invalid = "true"] {
+.booking-form input[aria-invalid="true"] {
     border-color: red;
+}
+
+.guests-label-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.35rem;
+}
+
+.guests-label-wrapper > label > span {
+    color: red;
+}
+
+.field-hint {
+    font-size: 0.85rem;
+    color: #495E57;
 }
 
 .guests-field-wrapper {
@@ -107,6 +122,7 @@
 }
 
 .booking-form input[type="submit"] {
+    font-weight: 800;
     background-color: #F4CE14;
     box-shadow: 0 2px 4px 0.5px rgba(0, 0, 0, 0.60);
 }
@@ -124,7 +140,7 @@
 
 /* Mobile Responsiveness */
 
-@media(max-width:440px) {
+@media (max-width: 440px) {
     .booking-form {
         max-width: 330px;
     }
