@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/little-lemon-restaurant">
       <Header />
       <Main />
       <Footer />
