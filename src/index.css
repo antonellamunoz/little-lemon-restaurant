@@ -454,6 +454,7 @@ footer {
 .social-links li > a {
     color: #EDEFEE;
     font-size: 3rem;
+    transition: background-color 0.2s ease,
 }
 
 .social-links li > a:focus-visible {
