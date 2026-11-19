@@ -16,6 +16,7 @@ Although the course suggested using Create React App, I decided to use Vite as t
 - [My Process](#my-process)
   - [Built With](#built-with)
   - [What I Learned](#what-i-learned)
+  - [Current Limitations](#current-limitations)
   - [Continued Development](#continued-development)
   - [Useful Resources](#useful-resources)
 - [Author](#author)
@@ -66,11 +67,17 @@ I also configured HTML metadata and Open Graph tags to improve how the website i
 
 I strengthened my understanding of unit testing and usability evaluation by writing unit tests using Vitest and React Testing Library to verify booking form validation, submit-button states, and available reservation times. I also evaluated the application against Nielsen's 10 usability heuristics.
 
-## Continued Development
+### Current Limitations
+
+Some navigation links in the header and footer are currently placeholders and do not lead to other pages or sections. Only the Home and Reservations links are functional, directing users to the homepage and booking page containing the reservation form, respectively. Similarly, the "Reserve a Table" button leads to the booking page, while the "Our Menu" button is currently a placeholder. The "Order a Delivery" button in the Specials section and the social media links in the footer are also placeholders and do not currently lead to other pages or external websites.
+
+The reservation form currently provides a basic implementation for collecting booking details and will be extended into a multi-step form to collect additional customer information, such as name and contact details.
+
+### Continued Development
 
 Through future projects, I would like to continue consolidating my understanding of React by applying the knowledge and skills I have acquired so far. I also want to explore more advanced concepts, tackle more complex challenges, and discover alternative approaches to implementing the functionality I developed in this project.
 
-## Useful Resources
+### Useful Resources
 
 - [React Router - Routing](https://reactrouter.com/start/declarative/routing) - A reference for implementing client-side routing and navigation between application pages.
 
